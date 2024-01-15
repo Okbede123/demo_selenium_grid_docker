@@ -55,11 +55,8 @@ public class DemoGridDocker {
 //        cOptions.addArguments("--start-maximized");
         cOptions.setEnableDownloads(true);
         cOptions.merge(desiredCapabilities);
-
         try {
             driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"), cOptions);
-
-
             driver.get("https://file-examples.com/wp-content/storage/2017/02/file-sample_100kB.doc");
             System.out.println(driver.getTitle());
             //cho` cho file duoc download
@@ -90,11 +87,12 @@ public class DemoGridDocker {
         cOptions.merge(desiredCapabilities);
 
         try {
-            driver = new RemoteWebDriver(new URL("http://192.168.1.4:4445/wd/hub"), cOptions);
+            driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444/wd/hub"), cOptions);
         //dung ham nay de handle lay file tu may hub
             ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
             driver.get("https://tus.io/demo");
             System.out.println(driver.getTitle());
+            Thread.sleep(4000);
             driver.findElement(By.xpath("//input")).sendKeys("C:\\Users\\Admin\\IdeaProjects\\testgithubcommandline\\fileanh\\chu_ky.png");
 
             Thread.sleep(10000);
