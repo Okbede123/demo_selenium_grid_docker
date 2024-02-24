@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel = "test" name = "TestCase report portal" thread-count = "1">
+
+    <parameter name = "url" value ="https://demo.guru99.com/v4/index.php" />
+
+    <test name = "Run On Chrome 2">
+        <classes>
+            <class name = "reportportaltest.ReportPortalTest" />
+        </classes>
+    </test>
+</suite>
